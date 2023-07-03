@@ -15,13 +15,13 @@ Resources:
   HelloWorldFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: hello_world/
-      Handler: app.lambda_handler
-      Runtime: python3.10
-      Layers:
-        - !Ref HelloLayer
+      PackageType: Image
       Architectures:
-        - x86_64
+      - x86_64
+    Metadata:
+      Dockerfile: ./hello_world/Dockerfile
+      DockerContext: ./
+      DockerTag: python3.10
   HelloLayer:
     Type: AWS::Serverless::LayerVersion
     Properties: 
