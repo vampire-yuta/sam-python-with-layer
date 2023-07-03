@@ -1,4 +1,4 @@
 
 def module1_handler():
-    print('module1')
+    print('hello module1')
     return

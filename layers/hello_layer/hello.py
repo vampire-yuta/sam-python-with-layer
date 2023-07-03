@@ -1,4 +1,4 @@
-from .module1 import module1_handler
+from module1.module1 import module1_handler
 
 
 def function_hello():
