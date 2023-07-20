@@ -20,6 +20,7 @@ Resources:
       Runtime: python3.10
       Layers:
         - !Ref HelloLayer
+        - !Ref RequestLayer
       Architectures:
         - x86_64
   HelloLayer:
@@ -27,6 +28,16 @@ Resources:
     Properties: 
       LayerName: hello_layer
       ContentUri: ./layers/hello_layer/
+      CompatibleRuntimes:
+        - python3.10
+      RetentionPolicy: Retain
+    Metadata:
+      BuildMethod: python3.10
+  RequestLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties: 
+      LayerName: request_layer
+      ContentUri: ./layers/request_layer/
       CompatibleRuntimes:
         - python3.10
       RetentionPolicy: Retain
